@@ -26,8 +26,8 @@ namespace ProjectContextExtractor
 
             TraverseDirectory(_config.ProjectPath, projectContext, _config.ProjectPath, _config.IgnoreList, _config.AllowedExtensions);
 
-            var dateTime = DateTime.Now.ToString("yyyyMMddHHmmss");
-            var outputFileName = $"{_config.ProjectName}-export-{dateTime}.txt";
+            var dateTime = DateTime.Now.ToString("yyyyMMddHHmm");
+            var outputFileName = $"-export-{dateTime}.txt";
             var outputPath = Path.Combine(_config.OutputDirectory, outputFileName);
 
             File.WriteAllText(outputPath, projectContext.ToString());
