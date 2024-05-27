@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectContextExtractor", "ProjectContextExtractor\ProjectContextExtractor.csproj", "{AE4C2C3A-0946-4905-ABF5-3EB75BF91DB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE4C2C3A-0946-4905-ABF5-3EB75BF91DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4C2C3A-0946-4905-ABF5-3EB75BF91DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4C2C3A-0946-4905-ABF5-3EB75BF91DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4C2C3A-0946-4905-ABF5-3EB75BF91DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
