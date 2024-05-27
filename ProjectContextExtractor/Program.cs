@@ -27,6 +27,7 @@ namespace ProjectContextExtractor
 
                     services.AddTransient<ProjectFilesSchema>();
                     services.AddTransient<ProjectContextExtractor>();
+                    services.AddTransient<ForewordPromptGenerator>();
                 })
                 .Build();
 

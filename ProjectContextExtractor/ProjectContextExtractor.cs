@@ -6,16 +6,20 @@ namespace ProjectContextExtractor
     {
         private readonly Configuration _config;
         private readonly ProjectFilesSchema _schemaGenerator;
+        private readonly ForewordPromptGenerator _forewordGenerator;
 
-        public ProjectContextExtractor(Configuration config, ProjectFilesSchema schemaGenerator)
+        public ProjectContextExtractor(Configuration config, ProjectFilesSchema schemaGenerator, ForewordPromptGenerator forewordGenerator)
         {
             _config = config;
             _schemaGenerator = schemaGenerator;
+            _forewordGenerator = forewordGenerator;
         }
 
         public void Execute()
         {
             var projectContext = new StringBuilder();
+
+            projectContext.AppendLine(_forewordGenerator.GenerateForeword());
 
             projectContext.AppendLine("Project files schema:");
             projectContext.AppendLine(_schemaGenerator.GenerateSchema(_config.ProjectPath, _config.ProjectPath));
