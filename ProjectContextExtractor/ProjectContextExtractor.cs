@@ -19,6 +19,8 @@ namespace ProjectContextExtractor
         {
             var projectContext = new StringBuilder();
 
+            var projectName = GetProjectName(_config.ProjectPath);
+            projectContext.AppendLine($"Project Name: {projectName}");
             projectContext.AppendLine(_forewordGenerator.GenerateForeword());
 
             projectContext.AppendLine("Project files schema:");
@@ -26,8 +28,8 @@ namespace ProjectContextExtractor
 
             TraverseDirectory(_config.ProjectPath, projectContext, _config.ProjectPath, _config.IgnoreList, _config.AllowedExtensions);
 
-            var dateTime = DateTime.Now.ToString("yyyyMMddHHmm");
-            var outputFileName = $"-export-{dateTime}.txt";
+            var dateTime = DateTime.Now.ToString("yyMMddHHmm");
+            var outputFileName = $"{projectName}-projectContext-{dateTime}.txt";
             var outputPath = Path.Combine(_config.OutputDirectory, outputFileName);
 
             File.WriteAllText(outputPath, projectContext.ToString());
@@ -35,7 +37,9 @@ namespace ProjectContextExtractor
             Console.WriteLine($"Project context has been exported successfully to {outputPath}");
         }
 
-        private void TraverseDirectory(string currentPath, StringBuilder projectContext, string rootPath, List<string> ignoreList, List<string> allowedExtensions)
+        private static string GetProjectName(string projectPath) => new DirectoryInfo(projectPath).Name;
+
+        private static void TraverseDirectory(string currentPath, StringBuilder projectContext, string rootPath, List<string> ignoreList, List<string> allowedExtensions)
         {
             var directories = Directory.GetDirectories(currentPath);
             var files = Directory.GetFiles(currentPath);
@@ -59,10 +63,8 @@ namespace ProjectContextExtractor
             }
         }
 
-        private static string GetRelativePath(string fullPath, string rootPath)
-        {
-            return fullPath.Substring(rootPath.Length).TrimStart(Path.DirectorySeparatorChar);
-        }
+        private static string GetRelativePath(string fullPath, string rootPath) =>
+            fullPath.Substring(rootPath.Length).TrimStart(Path.DirectorySeparatorChar);
 
         private static bool ShouldIgnore(string path, List<string> ignoreList)
         {
