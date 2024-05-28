@@ -2,26 +2,19 @@
 
 namespace ProjectContextExtractor
 {
-    internal sealed class ForewordPromptGenerator
+    internal sealed class ForewordPromptGenerator(Configuration config)
     {
-        private readonly Configuration _config;
-
-        public ForewordPromptGenerator(Configuration config)
-        {
-            _config = config;
-        }
-
         public string GenerateForeword()
         {
             var foreword = new StringBuilder();
 
-            foreword.AppendLine(_config.ForewordText);
+            foreword.AppendLine(config.ForewordText);
 
-            if (_config.ReplyWithPromptFormat)
-            {
-                foreword.AppendLine(_config.ReplyWithPromptFormatText);
-                foreword.AppendLine();
-            }
+            if (!config.ReplyWithPromptFormat) return foreword.ToString();
+            
+            foreword.AppendLine(config.ReplyWithPromptFormatText);
+            foreword.AppendLine();
+            
             return foreword.ToString();
         }
     }

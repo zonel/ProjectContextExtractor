@@ -59,12 +59,12 @@ namespace ProjectContextExtractor
             }
         }
 
-        private string GetRelativePath(string fullPath, string rootPath)
+        private static string GetRelativePath(string fullPath, string rootPath)
         {
             return fullPath.Substring(rootPath.Length).TrimStart(Path.DirectorySeparatorChar);
         }
 
-        private bool ShouldIgnore(string path, List<string> ignoreList)
+        private static bool ShouldIgnore(string path, List<string> ignoreList)
         {
             foreach (var ignore in ignoreList)
             {
@@ -76,9 +76,9 @@ namespace ProjectContextExtractor
             return false;
         }
 
-        private bool IsAcceptedExtension(string filePath, List<string> allowedExtensions)
+        private static bool IsAcceptedExtension(string filePath, List<string> allowedExtensions)
         {
-            string extension = Path.GetExtension(filePath).ToLower();
+            var extension = Path.GetExtension(filePath).ToLower();
             foreach (var allowedExtension in allowedExtensions)
             {
                 if (extension == allowedExtension)
