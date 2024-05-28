@@ -6,7 +6,7 @@ namespace ProjectContextExtractor
 {
     internal class Program
     {
-        private static void Main(string[]args)
+        private static void Main(string[] args)
         {
             var host = Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, config) =>
@@ -17,6 +17,7 @@ namespace ProjectContextExtractor
                     config.SetBasePath(basePath);
                     config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{environment}.json", optional: true)
+                        .AddJsonFile("prompts.json", optional: false, reloadOnChange: true)
                         .AddEnvironmentVariables();
                 })
                 .ConfigureServices((context, services) =>
