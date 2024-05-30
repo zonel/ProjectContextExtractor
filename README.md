@@ -4,6 +4,24 @@
 
 # ProjectContextExtractor
 
-**Effortlessly generate and export your project's context to train AI models for intelligent collaboration directly from your IDE. 
-This project simplifies the process of extracting comprehensive project details, allowing machine learning AI models, such as ChatGPT, to understand and work on your project more effectively. 
-Enhance your development workflow with automated context extraction and intelligent project guidance.**
+**With ProjectContextExtractor, extracting the context of your entire project is as easy as a single click. Simply generate the project context, paste it into your favorite AI chat, and you’re ready to go. Our AI-ready prompts are meticulously crafted to optimize the AI's understanding, ensuring you get the best possible assistance tailored specifically for your development needs.**
+
+# How does it work?
+![image](https://github.com/zonel/ProjectContextExtractor/assets/40122657/a88e6e55-8543-47e5-a9fd-dd24e79be0f8)
+### With ProjectContextExtractor, extracting the context of your entire project is as easy as a single click. 
+Simply generate the project context, paste it into your favorite AI chat, and you’re ready to go. Our AI-ready prompts are meticulously crafted to optimize the AI's understanding, ensuring you get the best possible assistance tailored specifically for your development needs.
+
+------------
+### With vs Without ProjectContextExtractor
+**With ProjectContextExtractor**
+- **✅ One-Click Automation**: Extract your entire project’s context with a single click.
+- **✅ AI-Ready Output**: Directly paste the generated context into your favorite AI chat for instant, intelligent assistance.
+- **✅ Time-Saving**: Drastically reduce the time spent on manual documentation and context compilation.
+- **✅ Enhanced AI Collaboration**: Provide your AI model with comprehensive project context, ensuring more accurate and helpful responses.
+- **✅ Consistent and Up-to-Date**: Keep your project documentation current, minimizing miscommunication and errors.
+
+**Without ProjectContextExtractor**
+- **😭 Manual Labor**: Spend countless hours manually compiling project details.
+- **😢 Limited AI Assistance**: Without comprehensive context, AI models offer less accurate and effective help.
+- **😣 Time-Consuming**: Documentation quickly becomes outdated, leading to inconsistencies and confusion among team members.
+- **😰 Inconsistent Quality**: Varying levels of detail and accuracy in manually created documentation.
