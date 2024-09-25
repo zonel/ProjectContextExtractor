@@ -36,6 +36,13 @@ namespace ProjectContextExtractor
 
             Console.WriteLine($"Project context has been exported successfully to {outputPath}");
         }
+        
+        public string GetFullContext()
+        {
+            var projectContext = new StringBuilder();
+            TraverseDirectory(_config.ProjectPath, projectContext, _config.ProjectPath, _config.IgnoreList, _config.AllowedExtensions);
+            return projectContext.ToString();
+        }
 
         private static string GetProjectName(string projectPath) => new DirectoryInfo(projectPath).Name;
 

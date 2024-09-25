@@ -29,8 +29,12 @@ namespace ProjectContextExtractor
                     services.AddTransient<ProjectFilesSchema>();
                     services.AddTransient<ProjectContextExtractor>();
                     services.AddTransient<ForewordPromptGenerator>();
+                    services.AddTransient<EmbeddingManager>();
                 })
                 .Build();
+
+            // var embeddingManager = host.Services.GetRequiredService<EmbeddingManager>();
+            // embeddingManager.GenerateAndStoreEmbeddingsAsync().Wait();
 
             var extractor = host.Services.GetRequiredService<ProjectContextExtractor>();
             extractor.Execute();

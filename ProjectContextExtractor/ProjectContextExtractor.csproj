@@ -5,7 +5,6 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <UserSecretsId>90d447db-76be-43c9-a715-0ccbbe778082</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,6 +13,9 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+      <PackageReference Include="Microsoft.SemanticKernel" Version="1.21.0" />
+      <PackageReference Include="Milvus.Client" Version="2.3.0-preview.1" />
+      <PackageReference Include="Pinecone.Client" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup>
